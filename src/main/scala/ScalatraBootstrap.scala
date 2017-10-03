@@ -1,5 +1,4 @@
-
-import _root_.akka.actor.{ActorSystem, Props}
+import akka.actor.{ActorSystem, Props}
 import hu.zomg.tumblrplus._
 import org.scalatra._
 import javax.servlet.ServletContext

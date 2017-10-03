@@ -12,6 +12,7 @@ lazy val projectRoot = (project in file("."))
     .enablePlugins(ScalatraPlugin)
     .settings(shared,
       libraryDependencies ++= Seq(
+        "com.typesafe.akka"       %%  "akka-actor"      % "2.4.12",
         "net.databinder.dispatch" %%  "dispatch-core"   % "0.13.2",
         "org.scalatra"            %%  "scalatra"        % scalatraVersion,
         "org.scalatra.scalate"    %%  "scalate-core"    % "1.8.0",
