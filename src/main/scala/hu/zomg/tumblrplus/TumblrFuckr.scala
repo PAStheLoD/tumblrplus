@@ -14,7 +14,7 @@ import scala.util.{Success, Failure, Left, Try}
 
 object DispatchAkka {
 
-  val http = dispatch.Http.configure(_ setFollowRedirects true)
+  val http = dispatch.Http.withConfiguration(_ setFollowRedirect true)
 
   def retrievePage()(implicit ctx: ExecutionContext): Future[String] = {
     val prom = Promise[String]()

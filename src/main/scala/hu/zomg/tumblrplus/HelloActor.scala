@@ -2,8 +2,11 @@ package hu.zomg.tumblrplus
 
 import akka.actor.{Actor, ActorRef, ActorSystem}
 import org.scalatra.{Accepted, FutureSupport, ScalatraServlet}
+
 import scala.concurrent.ExecutionContext
 import akka.util.Timeout
+
+import scala.concurrent.duration._
 
 /**
  * Created by pas on 2014.04.07..
@@ -11,7 +14,7 @@ import akka.util.Timeout
 
 class HelloActorApp(system: ActorSystem, myActor:ActorRef) extends ScalatraServlet with FutureSupport {
   import _root_.akka.pattern.ask
-  implicit val timeout = Timeout(10)
+  implicit val timeout = Timeout(10 seconds)
 
   get("/async") {
     myActor ? "HELLO!"
